@@ -1,0 +1,40 @@
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+/** Placeholder color **/
+::-webkit-input-placeholder {
+    color: #212529;
+}
+:-ms-input-placeholder {
+    color: #212529;
+}
+::placeholder {
+    color: #212529;
+}
+
+/** Spacing **/
+.gap-sm {
+    gap: 5px;
+}
+.gap-md {
+    gap: 10px;
+}
+.gap-lg {
+    gap: 15px;
+}
+
+/** Font size **/
+.font-xs {
+    font-size: 11px;
+}
+.font-sm {
+    font-size: 13px;
+}
+
+/** Cursors **/
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/** Colors **/

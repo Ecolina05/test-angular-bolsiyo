@@ -1,0 +1,10 @@
+.image-result {
+    border-radius: 15px;
+    object-fit: cover;
+    width: 23%;
+
+    &:hover {
+        transform: scale(1.03);
+        transition: 0.2s;
+    }
+}

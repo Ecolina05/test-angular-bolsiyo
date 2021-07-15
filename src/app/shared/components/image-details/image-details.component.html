@@ -1,0 +1,39 @@
+<div class="modal fade" id="imageDetails" tabindex="-1" aria-labelledby="imageDetails" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <!-- Image -->
+                <div class="image-details p-3"
+                    [ngStyle]="{'background-image': 'url(' + imageInformation?.largeImageURL + ')'}">
+                    <div class="d-flex gap-sm">
+                        <label *ngFor="let tag of imageInformation?.tags.split(',')"
+                            class="badge rounded-pill bg-secondary p-2">{{tag | titlecase}}</label>
+                    </div>
+                </div>
+
+                <!-- Data -->
+                <div class="d-flex font-sm mt-3">
+                    <!-- Likes -->
+                    <label class="">
+                        <i class="bi bi-heart-fill mr-1 text-danger"></i> {{imageInformation?.likes | number}} likes
+                    </label>
+                    <!-- Separator -->
+                    <label class="mx-1">•</label>
+                    <!-- Views -->
+                    <label class="">
+                        <i class="bi bi-eye text-primary mr-1"></i> {{imageInformation?.views | number}} views
+                    </label>
+                    <!-- Separator -->
+                    <label class="mx-1">•</label>
+                    <!-- Comments -->
+                    <label class="">
+                        <i class="bi bi-chat-right-text mr-1"></i> {{imageInformation?.comments | number}} comments
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light font-sm" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

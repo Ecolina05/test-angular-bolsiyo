@@ -1,0 +1,10 @@
+<div class="">
+    <h1 class="fs-4 fw-bold">Categories.</h1>
+
+    <div class="container-images d-flex mt-4">
+        <picture *ngFor="let category of categories" class="image cursor-pointer" (click)="onSearch(category)">
+            <img [src]="category?.image" [alt]="category" class="img-fluid">
+            <p class="fs-6 fw-bold mt-2">{{category?.name | titlecase}}</p>
+        </picture>
+    </div>
+</div>

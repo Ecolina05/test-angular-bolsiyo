@@ -1,0 +1,36 @@
+<nav class="navbar navbar-light fixed-top bg-white shadow-sm py-3 mb-5">
+    <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand fs-5 fw-bold text-primary cursor-pointer" (click)="goToHome()">bolsiyo</a>
+
+        <!-- Search -->
+        <div class="search-image shadow gap-md px-2 py-1 d-flex gap-sm">
+            <input [(ngModel)]="filterText" type="text" id="searchImage" class="form-control pl-3"
+                placeholder="Search Images" (keyup.enter)="onSearch()">
+
+            <!-- Filter -->
+            <div class="dropdown">
+                <div class="btn-categories dropdown-toggle" id="categoriesDropdown" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    {{(filterCategory || 'Categories') | titlecase}}
+                </div>
+                <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                    <li *ngFor="let imageCategory of imagesCategories" (click)="filterCategory = imageCategory">
+                        <small><a class="dropdown-item" href="#">{{imageCategory | titlecase}}</a></small>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Button -->
+            <div class="btn-search bg-primary text-white rounded-circle" (click)="onSearch()">
+                <i class="bi bi-search"></i>
+            </div>
+        </div>
+
+        <!-- Developer -->
+        <form class="d-flex align-items-center position-relative gap-sm">
+            <i class="bi bi-code-slash text-primary"></i>
+            <label class="text-muted fw-bold sign ml-2">By Ernesto Colina</label>
+        </form>
+    </div>
+</nav>

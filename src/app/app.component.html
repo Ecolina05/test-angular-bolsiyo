@@ -1,0 +1,28 @@
+<!-- Container -->
+<app-navbar (imagesResult)="getImagesResult($event)"></app-navbar>
+
+<!-- Initial images -->
+<div class="container">
+    <div *ngIf="!imagesResult?.hits" class="mt-5 py-5">
+        <app-main-banner></app-main-banner>
+
+        <div class="mt-4 mb-4">
+            <app-container-categories (imagesResult)="getImagesResult($event)"></app-container-categories>
+        </div>
+    </div>
+
+    <!-- Images Result from search -->
+    <div *ngIf="imagesResult && imagesResult?.hits?.length > 0" class="mt-5 py-5">
+        <p class="font-sm mb-0">Se encontraron cerca de <b>{{imagesResult?.total | number}}</b> resultados</p>
+        <p class="font-xs text-primary cursor-pointer" (click)="imagesResult = []">Volver al inicio</p>
+
+        <div class="d-flex flex-wrap gap-md mt-4">
+            <img [id]="image?.id" [src]="image?.largeImageURL" [alt]="image?.tags"
+                *ngFor="let image of imagesResult?.hits" class="image-result img-fluid shadow-sm cursor-pointer"
+                data-bs-toggle="modal" data-bs-target="#imageDetails" (click)="currentImage = image">
+        </div>
+    </div>
+
+    <!-- Image Details -->
+    <app-image-details [imageInformation]="currentImage"></app-image-details>
+</div>

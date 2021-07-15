@@ -1,0 +1,32 @@
+.search-image {
+    align-items: center;
+    border-radius: 30px;
+    width: 350px;
+
+    input {
+        border: none;
+        box-shadow: none;
+        font-size: 13px;
+        outline: none;
+    }
+
+    .btn-categories,
+    .dropdown-item {
+        cursor: pointer;
+        font-size: 13px;
+    }
+
+    .btn-search {
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        font-size: 13px;
+        justify-content: center;
+        width: 55px;
+        height: 30px;
+    }
+}
+
+.sign {
+    font-size: 13.5px;
+}
